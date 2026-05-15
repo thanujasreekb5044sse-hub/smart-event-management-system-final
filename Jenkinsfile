@@ -1,12 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/thanujasreekb5044sse-hub/smart-event-management-system-final.git'
-            }
-        }
+    stage('Clone Repository') {
+    steps {
+        git branch: 'main', url: 'https://github.com/thanujasreekb5044sse-hub/smart-event-management-system-final.git'
+    }
+}
 
         stage('Build Frontend and Backend') {
             steps {
