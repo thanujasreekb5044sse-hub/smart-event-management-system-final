@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Event Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginPage" class="landing">
+  <nav>
+    <h2>EventAI</h2>
+    <div>
+      <a>Features</a>
+      <a>About</a>
+      <a>Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>AI-Powered University<br><span>Smart Event Management System</span></h1>
+    <p>Manage university events, registrations, schedules, participants and AI event support.</p>
+
+    <div class="login-cards">
+      <div class="login-card">
+        <div class="icon">P</div>
+        <h3>Participant Portal</h3>
+        <p>Browse events, register, and chat with AI assistant.</p>
+        <button onclick="openAuth('participant', 'login')">Participant Login</button>
+        <button class="outline-btn" onclick="openAuth('participant', 'signup')">Participant Signup</button>
+      </div>
+
+      <div class="login-card">
+        <div class="icon green">O</div>
+        <h3>Organizer Dashboard</h3>
+        <p>Create events, monitor registrations and manage analytics.</p>
+        <button class="green-btn" onclick="openAuth('organizer', 'login')">Organizer Login</button>
+        <button class="outline-btn green-text" onclick="openAuth('organizer', 'signup')">Organizer Signup</button>
+      </div>
+    </div>
+
+    <div id="authBox" class="login-box hidden">
+      <h3 id="authTitle">Login</h3>
+
+      <input id="name" class="hidden" placeholder="Full Name">
+      <input id="email" placeholder="Email">
+      <input id="password" type="password" placeholder="Password">
+
+      <button id="loginBtn" onclick="login()">Login</button>
+      <button id="signupBtn" class="hidden" onclick="signup()">Signup</button>
+
+      <p id="loginMsg"></p>
+
+      <p>
+        <a href="#" onclick="switchMode()">Switch Login / Signup</a>
+      </p>
+    </div>
+  </section>
+</div>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <h2>EventAI</h2>
+    <p id="roleText">Portal</p>
+
+    <button onclick="loadDashboard()">Dashboard</button>
+    <button onclick="loadEvents()">Events</button>
+    <button id="myRegBtn" onclick="loadMyRegistrations()">My Registrations</button>
+    <button id="chatBtn" onclick="loadChat()">AI Assistant</button>
+    <button id="addBtn" onclick="loadAddEvent()">Add Event</button>
+
+    <button onclick="logout()" class="logout">Sign Out</button>
+  </aside>
+
+  <main class="main">
+    <header>
+      <input placeholder="Search...">
+      <div class="profile">
+        <span>🔔</span>
+        <span id="userName">User</span>
+      </div>
+    </header>
+
+    <section id="content"></section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
